@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_nav"
+            app:startDestination="@+id/dashboard"
+            tools:ignore="UnusedNavigation">
+
+    <custom_view
+            android:id="@id/dashboard"
+            app:layoutId="@layout/dashboard"
+            tools:layout="@layout/dashboard">
+        <action android:id="@+id/action_to_home" app:destination="@id/home"/>
+        <action android:id="@+id/action_to_notification" app:destination="@id/notification"/>
+    </custom_view>
+
+    <custom_view
+            android:id="@+id/home"
+            app:layoutId="@layout/home">
+        <action android:id="@+id/action_to_notification" app:destination="@id/notification"/>
+        <action android:id="@+id/action_to_dashboard" app:destination="@id/dashboard"/>
+    </custom_view>
+
+    <custom_view
+            android:id="@+id/notification"
+            app:layoutId="@layout/notification">
+        <action android:id="@+id/action_to_home" app:destination="@id/home"/>
+        <action android:id="@+id/action_to_dashboard" app:destination="@id/dashboard"/>
+    </custom_view>
+
+</navigation>
